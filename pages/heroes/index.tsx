@@ -1,9 +1,11 @@
-import React, { Component } from 'react';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import { CardActionArea } from '@mui/material';
+import React, { Component } from "react";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import Typography from "@mui/material/Typography";
+import { CardActionArea } from "@mui/material";
+import HeroesContainerFilter from "../../components/heroes-container/HeroesContainerFilter";
+import HeroesContainerCard from "../../components/heroes-container/HeroesContainerCard";
 
 class Heroes extends Component {
     cards: JSX.Element[] = [...Array(10)].map((index) => {
@@ -31,7 +33,23 @@ class Heroes extends Component {
         );
     });
     render() {
-        return <div className="flex">{this.cards}</div>;
+        return (
+            <div className="heroes-container">
+                <div className="heroes-container-text">
+                    <Typography>Choose your hero</Typography>
+                    <Typography>
+                        Many classes to choose from that will suit a wide
+                        variety of playstyles
+                    </Typography>
+                </div>
+                <div className="heroes-container-filter">
+                    <HeroesContainerFilter></HeroesContainerFilter>
+                </div>
+                <div className="flex heroes-container-cards">
+                    <HeroesContainerCard></HeroesContainerCard>
+                </div>
+            </div>
+        );
     }
 }
 

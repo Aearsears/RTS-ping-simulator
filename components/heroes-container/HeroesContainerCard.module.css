@@ -1,0 +1,42 @@
+.image {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: 0.5s ease;
+    backface-visibility: hidden;
+    object-fit: cover;
+}
+
+.overlay {
+    transition: 0.5s ease;
+    opacity: 0;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+.heroCardContainer {
+    margin: 1em;
+}
+
+.heroCardContainer:hover .image {
+    opacity: 1;
+    transform: scale(1.5);
+}
+
+.heroCardContainer:hover .overlay {
+    opacity: 1;
+}
+
+.overlayText {
+    color: white;
+    font-size: 16px;
+    padding: 16px 32px;
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(0, 0, 0, 1) 100%
+    );
+}
