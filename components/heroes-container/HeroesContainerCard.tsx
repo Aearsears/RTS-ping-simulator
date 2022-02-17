@@ -11,8 +11,8 @@ interface Props {
 class HeroesContainerCard extends Component<Props> {
     render() {
         return (
-            <div className={styles.heroCardContainer}>
-                <Link href="/heroes/darkknight" passHref>
+            <Link href="/heroes/darkknight" passHref>
+                <div className={styles.heroCardContainer}>
                     <Image
                         src={classPic}
                         alt="img of class"
@@ -21,11 +21,11 @@ class HeroesContainerCard extends Component<Props> {
                         placeholder="blur"
                         className={styles.image}
                     ></Image>
-                </Link>
-                <div className={styles.overlay}>
-                    <div className={styles.overlayText}>Dark Knight</div>
+                    <div className={styles.overlay}>
+                        <div className={styles.overlayText}>Dark Knight</div>
+                    </div>
                 </div>
-            </div>
+            </Link>
         );
     }
 }

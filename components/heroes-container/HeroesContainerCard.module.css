@@ -19,6 +19,7 @@
 }
 .heroCardContainer {
     margin: 1em;
+    cursor: pointer;
 }
 
 .heroCardContainer:hover .image {
