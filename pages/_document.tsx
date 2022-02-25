@@ -1,4 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
+import Navbar from "../components/navbar/Navbar";
 
 class MyDocument extends Document {
     render() {

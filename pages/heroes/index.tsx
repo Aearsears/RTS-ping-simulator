@@ -6,6 +6,7 @@ import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
 import HeroesContainerFilter from "../../components/heroes-container/HeroesContainerFilter";
 import HeroesContainerCard from "../../components/heroes-container/HeroesContainerCard";
+import styles from "./styles.module.css";
 
 class Heroes extends Component {
     cards: JSX.Element[] = [...Array(10)].map((index) => {
@@ -34,10 +35,12 @@ class Heroes extends Component {
     });
     render() {
         return (
-            <div className="heroes-container">
+            <div className={styles.heroescontainer}>
                 <div className="heroes-container-text">
-                    <Typography>Choose your hero</Typography>
-                    <Typography>
+                    <Typography variant="h2" className="text-center">
+                        Choose your hero
+                    </Typography>
+                    <Typography variant="h6" className="text-center">
                         Many classes to choose from that will suit a wide
                         variety of playstyles
                     </Typography>
@@ -46,6 +49,8 @@ class Heroes extends Component {
                     <HeroesContainerFilter></HeroesContainerFilter>
                 </div>
                 <div className="flex heroes-container-cards">
+                    <HeroesContainerCard></HeroesContainerCard>
+                    <HeroesContainerCard></HeroesContainerCard>
                     <HeroesContainerCard></HeroesContainerCard>
                 </div>
             </div>

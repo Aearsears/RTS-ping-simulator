@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import * as PIXI from "pixi.js";
+import GameContainer from "../../components/GameContainer";
 
 class GamePage extends Component<{}, {}> {
     app = new PIXI.Application({
@@ -26,6 +27,12 @@ class GamePage extends Component<{}, {}> {
         return (
             <div className="game-container w-100 h-100">
                 <div ref={this.myRef}></div>
+                <GameContainer
+                    text="yes"
+                    handleChange={(event) => {
+                        event;
+                    }}
+                ></GameContainer>
             </div>
         );
     }
