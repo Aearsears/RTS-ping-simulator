@@ -3,3 +3,10 @@
     height: 100%;
     background-color: rgb(185, 184, 184);
 }
+
+.heroesContainerCards {
+    display: grid;
+    grid-template-columns: fit-content(100%) fit-content(100%) fit-content(100%);
+    justify-content: center;
+    justify-items: center;
+}

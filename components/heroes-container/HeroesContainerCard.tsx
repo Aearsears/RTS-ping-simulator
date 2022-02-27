@@ -1,11 +1,13 @@
 import Image from "next/image";
 import React, { Component } from "react";
 import styles from "./HeroesContainerCard.module.css";
-import classPic from "../../public/classes/warrior/Dark_Knight.png";
 import Link from "next/link";
 
 interface Props {
-    imgSrc?: string;
+    class: string;
+    subClass: string;
+    primaryStat: string;
+    imgSrc: StaticImageData;
 }
 
 class HeroesContainerCard extends Component<Props> {
@@ -14,7 +16,7 @@ class HeroesContainerCard extends Component<Props> {
             <Link href="/heroes/darkknight" passHref>
                 <div className={styles.heroCardContainer}>
                     <Image
-                        src={classPic}
+                        src={this.props.imgSrc}
                         alt="img of class"
                         height="200"
                         width="200"
@@ -22,7 +24,9 @@ class HeroesContainerCard extends Component<Props> {
                         className={styles.image}
                     ></Image>
                     <div className={styles.overlay}>
-                        <div className={styles.overlayText}>Dark Knight</div>
+                        <div className={styles.overlayText}>
+                            {this.props.subClass}
+                        </div>
                     </div>
                 </div>
             </Link>
