@@ -17,6 +17,7 @@ class Heroes extends Component {
         allClasses.forEach((value) => {
             this.subClassCards.push(
                 <HeroesContainerCard
+                    key={value.class}
                     class={value.class}
                     imgSrc={value.imgSrc}
                     primaryStat={value.primaryStat}

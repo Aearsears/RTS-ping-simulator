@@ -13,7 +13,10 @@ interface Props {
 class HeroesContainerCard extends Component<Props> {
     render() {
         return (
-            <Link href="/heroes/darkknight" passHref>
+            <Link
+                href={"/heroes/" + this.props.subClass.replace(" ", "")}
+                passHref
+            >
                 <div className={styles.heroCardContainer}>
                     <Image
                         src={this.props.imgSrc}
