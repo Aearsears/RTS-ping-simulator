@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import HeroesPageComponent from "../../components/heroes-page/HeroesPage";
 
 import { withRouter, NextRouter } from "next/router";
-
+import { Keys } from "../../components/HeroesClasses";
 interface WithRouterProps {
     router: NextRouter;
 }
@@ -15,7 +15,7 @@ class Subclass extends Component<MyComponentProps> {
         return (
             <div>
                 <HeroesPageComponent
-                    subclass={this.props.router.query.subclass as string}
+                    subclass={this.props.router.query.subclass as Keys}
                 ></HeroesPageComponent>
             </div>
         );

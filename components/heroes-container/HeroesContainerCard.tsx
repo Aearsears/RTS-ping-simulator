@@ -5,7 +5,8 @@ import Link from "next/link";
 
 interface Props {
     class: string;
-    subClass: string;
+    subClassName: string;
+    subClassNameDisplay: string;
     primaryStat: string;
     imgSrc: StaticImageData;
 }
@@ -13,10 +14,7 @@ interface Props {
 class HeroesContainerCard extends Component<Props> {
     render() {
         return (
-            <Link
-                href={"/heroes/" + this.props.subClass.replace(" ", "")}
-                passHref
-            >
+            <Link href={"/heroes/" + this.props.subClassName} passHref>
                 <div className={styles.heroCardContainer}>
                     <Image
                         src={this.props.imgSrc}
@@ -28,7 +26,7 @@ class HeroesContainerCard extends Component<Props> {
                     ></Image>
                     <div className={styles.overlay}>
                         <div className={styles.overlayText}>
-                            {this.props.subClass}
+                            {this.props.subClassNameDisplay}
                         </div>
                     </div>
                 </div>

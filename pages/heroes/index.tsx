@@ -19,9 +19,10 @@ class Heroes extends Component {
                 <HeroesContainerCard
                     key={value.class}
                     class={value.class}
+                    subClassNameDisplay={value.subclass}
+                    subClassName={value.constructor.name}
                     imgSrc={value.imgSrc}
                     primaryStat={value.primaryStat}
-                    subClass={value.subclass}
                 ></HeroesContainerCard>
             );
         });

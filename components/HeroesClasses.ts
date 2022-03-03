@@ -4,14 +4,16 @@ import paladinPic from "../public/classes/warrior/Paladin.png";
 import bowmasterPic from "../public/classes/bowman/Bowmaster.png";
 import marksmanPic from "../public/classes/bowman/Marksman.png";
 import pathfinderPic from "../public/classes/bowman/Pathfinder.png";
+import pathfinderAnim from "../public/classes/bowman/Pathfinder.gif";
 import fpMagePic from "../public/classes/magician/FP_Mage.png";
 import ilMagePic from "../public/classes/magician/IL_Mage.png";
 import bishopPic from "../public/classes/magician/Bishop.png";
 import shadowerPic from "../public/classes/thief/Shadower.png";
 import dualBladePic from "../public/classes/thief/Dual_Blade.png";
+import dualBladeAnim from "../public/classes/thief/Dual_Blade.gif";
 import nightLordPic from "../public/classes/thief/Night_Lord.png";
-
-class Warrior {
+class Base {}
+class Warrior extends Base {
     readonly class: string = "Warrior";
     readonly primaryStat: string = "Strength";
 }
@@ -37,7 +39,7 @@ class DarkKnight extends Warrior {
     }
 }
 
-class Bowman {
+class Bowman extends Base {
     readonly class: string = "Bowman";
     readonly primaryStat: string = "Dexterity";
 }
@@ -57,13 +59,14 @@ class Marksman extends Bowman {
 }
 class Pathfinder extends Bowman {
     imgSrc: StaticImageData = pathfinderPic;
+    animSrc: StaticImageData = pathfinderAnim;
     readonly subclass: string = "Pathfinder";
     constructor() {
         super();
     }
 }
 
-class Magician {
+class Magician extends Base {
     readonly class: string = "Magician";
     readonly primaryStat: string = "Intelligence";
 }
@@ -89,7 +92,7 @@ class Bishop extends Magician {
     }
 }
 
-class Thief {
+class Thief extends Base {
     readonly class: string = "Thief";
     readonly primaryStat: string = "Luck";
 }
@@ -102,6 +105,7 @@ class Night_Lord extends Thief {
 }
 class Dual_Blade extends Thief {
     imgSrc: StaticImageData = dualBladePic;
+    animSrc: StaticImageData = dualBladeAnim;
     readonly subclass: string = "Dual Blade";
     constructor() {
         super();
@@ -128,5 +132,28 @@ const allClasses = [
     new Pathfinder(),
     new Shadower(),
 ];
+const heroMap = {
+    Hero: Hero,
+    DarkKnight: DarkKnight,
+    Paladin: Paladin,
+    Bowmaster: Bowmaster,
+    Bishop: Bishop,
+    Dual_Blade: Dual_Blade,
+    FP_Mage: FP_Mage,
+    IL_Mage: IL_Mage,
+    Marksman: Marksman,
+    Night_Lord: Night_Lord,
+    Pathfinder: Pathfinder,
+    Shadower: Shadower,
+};
+export type Keys = keyof typeof heroMap;
+type heroTypes = typeof heroMap[Keys];
+type ExtractInstanceType<T> = T extends new () => infer R ? R : never;
+
+export class heroFactory {
+    static getHero(k: Keys): ExtractInstanceType<heroTypes> {
+        return new heroMap[k]();
+    }
+}
 
 export { allClasses };
