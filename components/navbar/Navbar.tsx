@@ -42,6 +42,11 @@ class Navbar extends Component {
                                     Heroes
                                 </a>
                             </Link>
+                            <Link href="/">
+                                <a color="inherit" className="ml-auto">
+                                    Chatrooms
+                                </a>
+                            </Link>
                         </div>
                         <a color="inherit" className="ml-auto">
                             Login

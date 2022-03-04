@@ -7,7 +7,7 @@ import styles from "./HeroesPageAnim.module.css";
 interface Props {
     primaryStat: string;
     subclass: string;
-    animation?: StaticImageData;
+    img: StaticImageData;
 }
 class HeroesPageAnim extends Component<Props> {
     render() {
@@ -24,11 +24,7 @@ class HeroesPageAnim extends Component<Props> {
                 </div>
                 <div className="animation">
                     <Image
-                        src={
-                            this.props.animation
-                                ? this.props.animation
-                                : animation
-                        }
+                        src={this.props.img}
                         alt="animation of class"
                     ></Image>
                 </div>

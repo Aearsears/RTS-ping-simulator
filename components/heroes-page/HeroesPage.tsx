@@ -13,6 +13,7 @@ class HeroesPageComponent extends Component<Props> {
                 <HeroesPageAnim
                     primaryStat={subclass.primaryStat}
                     subclass={subclass.subclass}
+                    img={subclass.imgSrc}
                 ></HeroesPageAnim>
                 <HeroesPageSkills></HeroesPageSkills>
                 <h1>Attribute</h1>
